@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  list-style: none;
+  text-decoration: none;
+  background: #bcbbc0;
+  color: #17202A;
+  line-height: 1.7;
+}
+body .btn {
+  width: 100%;
+  display: inline-block;
+  color: #bcbbc0;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid #bcbbc0;
+  transition: all 400ms ease;
+  margin-bottom: 2px;
+}
+body .btn:hover {
+  background: #17202A;
+  color: #17202A;
+  border-color: transparent;
+}
+body .btn-primary {
+  background: #bcbbc0;
+  color: #fff;
+}
+
+header {
+  padding-bottom: 30px;
+}
+header .nav {
+  overflow: hidden;
+  background-color: #17202A;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header .nav-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .nav-item {
+  list-style: none;
+  margin-right: 2rem;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 17px;
+}
+header .nav-item a {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px;
+}
+header .nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.87);
+  color: #17202A;
+  border-radius: 5px;
+}
+header .nav-item:first-child {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.product-container {
+  padding: 8% 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.product-container .product-item {
+  background-color: rgba(255, 255, 255, 0.87);
+  color: #17202A;
+  padding: 1rem;
+  margin: 10px;
+  text-align: center;
+  max-width: 400px;
+  border-radius: 10px;
+  flex: 29.33%;
+}
+.product-container .product-item .div-product-footer {
+  display: flex;
+}
+.product-container .product-item .div-product-footer button {
+  font-weight: bold;
+  margin: 2px;
+  font-size: 15px;
+  color: #17202A;
+}
+.product-container .product-item button {
+  color: #17202A;
+}
+.product-container .product-item button:hover {
+  color: #fff;
+}
+
+.new-product-container {
+  padding: 8% 0 0;
+  width: 365px;
+  margin: auto;
+}
+.new-product-container .form-product {
+  background-color: rgba(255, 255, 255, 0.87);
+  max-width: 350px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  border-radius: 10px;
+}
+.new-product-container .form-product .input-product {
+  font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  outline: 0;
+  font-size: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.87);
+  color: #17202A;
+  border-radius: 12px;
+}
+.new-product-container .form-product .input-product::placeholder {
+  color: #17202A;
+}
+.new-product-container .form-product button {
+  color: #17202A;
+}
+.new-product-container .form-product button:hover {
+  color: #fff;
+}
+
+.shopping-container {
+  padding: 8% 0 0;
+  width: 365px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.shopping-container .shopping-div {
+  padding: 8% 0 0;
+  width: 365px;
+  background-color: rgba(255, 255, 255, 0.87);
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 45px;
+  border-radius: 10px;
+}
+.shopping-container .shopping-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #c6c2d6;
+  margin-bottom: 10px;
+  height: 40px;
+  align-items: center;
+  border-radius: 10px;
+}
+.shopping-container .shopping-button button:hover {
+  color: #fff;
+}
+
+.display {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

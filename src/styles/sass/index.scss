@@ -1,0 +1,212 @@
+@import './variables.scss';
+
+body {
+    margin: 0;
+    font-family: $font-family;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    list-style: none;
+    text-decoration: none;
+    background: $color-primary;
+    color: $color-black;
+    line-height: 1.7;
+
+    .btn {
+        width: 100%;
+        display: inline-block;
+        color: $color-primary;
+        padding: 0.75rem 1.2rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        border: 1px solid $color-primary;
+        transition: $transition;
+        margin-bottom: 2px;
+
+        &:hover {
+            background: $color-black;
+            color: $color-black;
+            border-color: transparent;
+        }
+    }
+      
+    .btn-primary {
+        background: $color-primary;
+        color: $color-white;
+    }
+}
+
+///////// HEADER /////////
+header {
+    padding-bottom: 30px;
+
+    .nav {
+        overflow: hidden;
+        background-color: $color-black;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .nav-item {
+        list-style: none;
+        margin-right: 2rem;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 17px;
+
+        a {
+            color: $color-white;
+            text-decoration: none;
+            padding: 14px;
+
+            &:hover {
+                background-color: $color-light;
+                color: $color-black;
+                border-radius: 5px;
+            }
+        }
+
+        &:first-child {
+            flex: 1;
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
+///////// PRODUCTS LIST /////////
+.product-container {
+    padding: 8% 0 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+    .product-item {
+        background-color: $color-light;
+        color: $color-black;
+        padding: 1rem;
+        margin: 10px;
+        text-align: center;
+        max-width: 400px;
+        border-radius: 10px;
+        flex: 29.33%;
+
+        .div-product-footer {
+            display: flex;
+
+            button {
+                font-weight: bold;
+                margin: 2px;
+                font-size: 15px;
+                color: $color-black;
+            }
+        }
+
+        button {
+            color: $color-black;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+///////// NEW PRODUCT /////////
+.new-product-container {
+    padding: 8% 0 0;
+    width: 365px;
+    margin: auto;
+
+    .form-product {
+        background-color: $color-light;
+        max-width: 350px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        border-radius: 10px;
+
+        .input-product {
+            font-family: $font-family;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            outline: 0;
+            font-size: 15px;
+            text-align: center;
+            box-sizing: border-box;
+            background: $color-light;
+            color: $color-black;
+            border-radius: 12px;
+
+            &::placeholder {
+                color: $color-black;
+            }
+        }
+
+        button {
+            color: $color-black;
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+///////// SHOPPING CART /////////
+.shopping-container {
+    padding: 8% 0 0;
+    width: 365px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .shopping-div {
+        padding: 8% 0 0;
+        width: 365px;
+        background-color: $color-light;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 45px;
+        border-radius: 10px;
+    }
+
+    .shopping-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: $color-bg;
+        margin-bottom: 10px;
+        height: 40px;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .shopping-button {
+        button {
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+///////// SHOPPING CART /////////
+.display {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
