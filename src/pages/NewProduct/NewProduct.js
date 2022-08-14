@@ -1,11 +1,14 @@
 import { useDispatch } from "react-redux";
-import { addNewProduct } from "../../store/reducers/shoppingCart";
+import { addNewProduct, infoModal } from "../../store/reducers/shoppingCart";
 import uuid from 'react-uuid'
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const NewProduct = () => {
   const [infoProduct, setInfoProduct] = useState({ name: '', price: '', amount: ''})
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
   const inputChange = (event) => {
     event.preventDefault();
     setInfoProduct({
@@ -13,16 +16,23 @@ const NewProduct = () => {
       [event.target.name]: event.target.value
     })
   }
+
   const addProduct = (e) => {
     e.preventDefault();
-    const { name, price, amount } = infoProduct;
-    dispatch(addNewProduct({
-      name,
-      price,
-      amount,
-      "id": uuid()
-    }))
-    setInfoProduct({ name: '', price: '', amount: ''})
+    if(infoProduct.name && infoProduct.amount && infoProduct.price) {
+      const { name, price, amount } = infoProduct;
+      dispatch(addNewProduct({
+        name,
+        price,
+        amount,
+        "id": uuid()
+      }))
+      setInfoProduct({ name: '', price: '', amount: ''})
+      dispatch(infoModal({show: true, description: '¡Se creó el producto correctamente!'}))
+      navigate('/')
+    } else {
+      dispatch(infoModal({show: true, description: '¡Ingrese la información correspondiente en los campos!'}))
+    }
   }
   return (
     <>

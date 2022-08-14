@@ -6,16 +6,17 @@ import { modalSelector } from '../../store/selectors/shoppingCartSelectors';
 const Modal = () => {
 	const modal = useSelector(modalSelector)
 	const dispatch = useDispatch();
+	window.scrollTo(0, 0)
 
 	const closeModal = () => {
-		dispatch(infoModal({show: false, description: ''}))
+			dispatch(infoModal({show: false, description: ''}))
 	}
 
   return (
-    <div className={modal.show ? 'display' : 'hide'}>
+    <div className={modal.show ? 'modal-container display' : 'hide'}>
         <div className='modal'>
             <div className='modal-header'>
-                <h3>Information</h3>
+                <h3>Información</h3>
             </div>
             <div className='modal-body'>
                 <span>{modal.description}</span>

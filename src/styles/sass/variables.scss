@@ -1,14 +1,24 @@
-$color-bg: #c6c2d6;
-$color-bg-variant: #004e5a;
-$color-primary: #bcbbc0;
-$color-primary-variant: #0f2424;
+$color-bg: #cbc8d8;
 $color-white: #fff;
 $color-black: #17202A;
 $color-light: rgba(255, 255, 255, 0.87);
 $transition: all 400ms ease;
-$container-width-lg: 75%;
-$container-width-md: 86%;
-$container-width-sm: 90%;
-$font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Segoe UI', 'Roboto', 'Oxygen',
-'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-sans-serif;
+$font-family: "Fira Sans", sans-serif;
+$border-radius: 0.5rem;
+$max-width: 350px;
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+@mixin darkMode {
+    background-color: $color-black;
+    color: $color-white;
+}
+
+@mixin lightMode {
+    background-color: $color-white;
+    color: $color-black;
+}

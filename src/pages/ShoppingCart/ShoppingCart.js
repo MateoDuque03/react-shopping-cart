@@ -1,25 +1,40 @@
 import NumberFormat from "react-number-format";
 import { useDispatch, useSelector } from "react-redux"
-import { buyProducts, clearCart, deleteCartProductById } from "../../store/reducers/shoppingCart";
+import { addProductToCart, buyProducts, clearCart, deleteCartProductById, infoModal } from "../../store/reducers/shoppingCart";
 import { productsAddedToCart } from "../../store/selectors/shoppingCartSelectors"
 import { TiDeleteOutline } from 'react-icons/ti'
 
 const ShoppingCart = () => {
   const productsAdded = useSelector(productsAddedToCart);
   const dispatch = useDispatch();
-  const total = productsAdded.reduce((acc, val) => acc + (val.price * val.amount), 0)
+  const totalReduce = (acc, val) => acc + (val.price * val.amount);
+  const total = productsAdded.reduce(totalReduce, 0)
+  const localStoreProducts = JSON.parse(localStorage.getItem('cartProducts'));
+  if (localStoreProducts && productsAdded.length === 0 ) {
+    localStoreProducts.forEach(element => {
+      dispatch(addProductToCart(element))
+    });
+  }
+
   const clearToCart = () => {
     dispatch(clearCart())
+    localStorage.clear();
   }
 
   const buyCart =  () => {
     dispatch(buyProducts())
+    dispatch(infoModal({show: true, description: '¡Felicidades por su compra!'}))
   }
 
   const deleteById = (id) => {
     dispatch(deleteCartProductById(id))
+    const localStoreProducts = JSON.parse(localStorage.getItem('cartProducts'))
+    if(localStoreProducts) {
+      const product = localStoreProducts.filter(product => product.idProduct !== id)
+      localStorage.setItem('cartProducts', JSON.stringify(product));
+    }
   }
-  
+
   return (
     <>
       <div className='shopping-container'>
@@ -29,7 +44,7 @@ const ShoppingCart = () => {
               <div>{product.name}</div>
               <div>{product.amount}</div>
               <div>{product.price}</div>
-              <div onClick={() => {deleteById(product.id)}}><TiDeleteOutline/></div>
+              <div title="Eliminar" className='icon-delete' onClick={() => {deleteById(product.id)}}><TiDeleteOutline/></div>
             </div>
             })
           }
