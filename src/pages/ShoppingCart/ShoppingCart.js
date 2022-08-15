@@ -23,6 +23,7 @@ const ShoppingCart = () => {
 
   const buyCart =  () => {
     dispatch(buyProducts())
+    localStorage.clear();
     dispatch(infoModal({show: true, description: '¡Felicidades por su compra!'}))
   }
 

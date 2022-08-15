@@ -6,17 +6,13 @@ import light from '../../assets/light.png'
 import { useEffect, useState } from 'react'
 
 const Header = () => {
-  const [colorIcon, setColorIcon] = useState('black');
-
   const handleCheckbox = (event) => {
     if (event.target.checked) {
       document.body.classList.remove('isLight');
       document.body.classList.add('isDark');
-      // setColorIcon('white');
     } else {
       document.body.classList.remove('isDark');
       document.body.classList.add('isLight');
-      // setColorIcon('black');
     }
   }
 
@@ -31,7 +27,7 @@ const Header = () => {
                 <li className='nav-item'><img className='image' src={n5} alt='Kiwi standing on oval'/></li>
                 <li className='nav-item'><Link to='/product'>Productos</Link></li>
                 <li className='nav-item'><Link to='/new-product'>Añadir Producto</Link></li>
-                <li className='nav-item'><Link to='/shopping-cart'><BsCart3/></Link></li>
+                <li className='nav-item'><Link to='/shopping-cart'><BsCart3 title='cart'/></Link></li>
                 <li className='nav-item'>
                 <div className="dark-mode">
                   <input type="checkbox" id="checkbox" className="dark-mode-checkbox" onChange={handleCheckbox}></input>
